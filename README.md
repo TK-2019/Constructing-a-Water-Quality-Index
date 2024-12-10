@@ -1,4 +1,30 @@
 # Constructing-a-Water-Quality-Index
-This study presents the development of a comprehensive Water Quality Index (WQI) tailored for India, utilizing an extensive dataset comprising various water quality parameters collected from multiple districts across all states over several years. The methodology commenced with data preprocessing and the creation of a labeled training dataset, where each parameter measurement was classified as indicative of healthy water based on the Bureau of Indian Standards (BIS) limits. A neural network was subsequently trained to predict the healthiness of water using these parameters. To ascertain the relative significance of each parameter in determining water quality, advanced model interpretation techniques such as Layer-wise Relevance Propagation (LRP) and Shapley values were employed to derive their respective weights for the additive WQI. Following this, sub-indices for individual parameters were formulated, and overall index values were calculated to reflect the water quality status. The resulting WQI was visualized through heatmaps, highlighting spatial and temporal variations in water quality across different states and years. This index provides a robust and scalable tool for monitoring water quality, facilitating informed decision-making for environmental management, policy formulation, and public health initiatives in India.
+This repository contains the project Construction of a Water Quality Index, developed as part of an undergraduate course project at the Indian Institute of Technology Kanpur. The project introduces a comprehensive Water Quality Index (WQI) tailored for India, combining machine learning and environmental science to assess and visualize water quality across various regions.
 
-The uploaded report contains detailed description of the project.
+# Overview
+This project aims to:
+
+1. Develop a Water Quality Index (WQI) based on Indian standards.
+2. Utilize machine learning to determine parameter significance.
+3. Visualize water quality trends across districts and states using heatmaps.
+
+# Steps to develop a WQI 
+
+# 1. Data Preparation -
+Utilized groundwater quality data from 2010 to 2018, covering multiple districts and states. The key step is creation of a labelled dataset denoting healthy/unhealthy              groundwater based on the BIS limits.
+Code is available in data_prep.py
+
+# 2. Training a neural network -
+A DNN was trained to learn to classify a water instance as healthy/unhealthy. We used the network to get significances for the water parameters.
+Code is available in training.py
+
+# 3. Estimating Weights - 
+Model weights were interpreted in order to have feature importances using Shapley values. Code is available in weights.py
+
+# 4. Sub-Indices - 
+Model parameters need to be brought to a uniform scale in order for the index to make sense. We used a piecewise linear function based on BIS limits for the same. Details can be seen in the report. (report.pdf) Code can be seen in sub-indices.py. Rating plots for several parameters are also uploaded.
+
+# 5. Plotting - 
+Finally the index was plotted on a map of India using matplotlib. We used the districts latitude and longitude to determine its location on the map. Code can be seen in plot.py as well as the plots are also uploaded.
+
+
