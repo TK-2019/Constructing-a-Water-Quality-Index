@@ -27,4 +27,4 @@ Model parameters need to be brought to a uniform scale in order for the index to
 # 5. Plotting - 
 Finally the index was plotted on a map of India using matplotlib. We used the districts latitude and longitude to determine its location on the map. Code can be seen in plot.py as well as the plots are also uploaded.
 
-
+Detailed description can be seen in the uploaded report.
